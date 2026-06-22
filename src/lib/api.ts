@@ -30,10 +30,16 @@ export async function updateTodo(
   itemId: number,
   data: Partial<Pick<TodoItem, "name" | "memo" | "imageUrl" | "isCompleted">>,
 ): Promise<TodoItem> {
+  // imageUrl이 null이면 아예 제외하고 보내기
+  const body = { ...data };
+  if (body.imageUrl === null) {
+    delete body.imageUrl;
+  }
+
   const res = await fetch(`${BASE_URL}/${TENANT_ID}/items/${itemId}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
+    body: JSON.stringify(body),
   });
   return res.json();
 }

@@ -58,7 +58,12 @@ export default function ItemDetail() {
   /* 수정 완료 */
   const handleUpdate = async () => {
     if (!todo) return;
-    await updateTodo(todo.id, { name, memo, imageUrl, isCompleted });
+    await updateTodo(todo.id, {
+      name,
+      memo,
+      ...(imageUrl !== null && { imageUrl }),
+      isCompleted,
+    });
     router.push("/");
   };
 
@@ -165,7 +170,7 @@ export default function ItemDetail() {
         {/* 수정 완료 버튼 */}
         <button
           onClick={handleUpdate}
-          className={`flex items-center gap-2 h-[56px] px-6 rounded-full border-2 border-slate-900 font-bold text-slate-900 hover:opacity-90 transition shadow-[2px_3.5px_0_0_#0F172A]
+          className={`cursor-pointer flex items-center gap-2 h-[56px] px-6 rounded-full border-2 border-slate-900 font-bold text-slate-900 hover:opacity-90 transition shadow-[2px_3.5px_0_0_#0F172A]
     ${isCompleted ? "bg-lime-300" : "bg-slate-200"}`}
         >
           <Image src="/images/ic-check.svg" alt="완료" width={16} height={16} />
@@ -174,7 +179,7 @@ export default function ItemDetail() {
         {/* 삭제하기 버튼 */}
         <button
           onClick={handleDelete}
-          className="flex items-center gap-2 h-[56px] px-6 rounded-full border-2 border-slate-900 bg-rose-500 font-bold text-white hover:bg-rose-600 transition shadow-[2px_3.5px_0_0_#0F172A]"
+          className="cursor-pointer flex items-center gap-2 h-[56px] px-6 rounded-full border-2 border-slate-900 bg-rose-500 font-bold text-white hover:bg-rose-600 transition shadow-[2px_3.5px_0_0_#0F172A]"
         >
           <Image src="/images/ic-x.svg" alt="삭제" width={16} height={16} />
           삭제하기
