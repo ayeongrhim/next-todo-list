@@ -81,7 +81,7 @@ export default function ItemDetail() {
       {/* 할 일 이름 + 상태 토글 */}
       <div
         onClick={() => setIsCompleted(!isCompleted)}
-        className={`flex items-center justify-center gap-4 w-full h-[64px] px-6 rounded-2xl border-2 border-slate-900 cursor-pointer mb-6
+        className={`flex items-center justify-center gap-4 w-full h-[64px] px-6 rounded-3xl border-2 border-slate-900 cursor-pointer mb-6
     ${isCompleted ? "bg-violet-100" : "bg-white"}`}
       >
         <Image
@@ -163,12 +163,12 @@ export default function ItemDetail() {
           {/* Memo 타이틀 상단 고정 */}
           <p className="text-center font-bold text-amber-800 mb-4">Memo</p>
           {/* 내용 영역 - 세로 가운데 정렬 */}
-          <div className="flex items-center justify-center h-[calc(100%-40px)]">
+          <div className="flex items-center justify-center h-[calc(100%-40px)] scrollbar-thin scrollbar-thumb-amber-200 scrollbar-track-trasparent scrollbar-gutter-stable">
             <textarea
               value={memo}
               onChange={(e) => setMemo(e.target.value)}
               placeholder="메모를 입력해주세요"
-              className="w-full bg-transparent outline-none resize-none text-slate-800 placeholder:text-slate-400 text-center"
+              className="h-full w-full bg-transparent outline-none resize-none text-slate-800 placeholder:text-slate-400 text-center"
             />
           </div>
         </div>
@@ -179,7 +179,7 @@ export default function ItemDetail() {
         {/* 수정 완료 버튼 */}
         <button
           onClick={handleUpdate}
-          className={`cursor-pointer flex items-center gap-2 h-[56px] px-6 rounded-full border-2 border-slate-900 font-bold text-slate-900 hover:opacity-90 transition shadow-[2px_3.5px_0_0_#0F172A]
+          className={`cursor-pointer flex items-center gap-2 h-[56px] px-6 rounded-3xl border-2 border-slate-900 font-bold text-slate-900 hover:opacity-90 transition shadow-[2px_3.5px_0_0_#0F172A]
     ${isCompleted ? "bg-lime-300" : "bg-slate-200"}`}
         >
           <Image src="/images/ic-check.svg" alt="완료" width={16} height={16} />
@@ -188,7 +188,7 @@ export default function ItemDetail() {
         {/* 삭제하기 버튼 */}
         <button
           onClick={handleDelete}
-          className="cursor-pointer flex items-center gap-2 h-[56px] px-6 rounded-full border-2 border-slate-900 bg-rose-500 font-bold text-white hover:bg-rose-600 transition shadow-[2px_3.5px_0_0_#0F172A]"
+          className="cursor-pointer flex items-center gap-2 h-[56px] px-6 rounded-3xl border-2 border-slate-900 bg-rose-500 font-bold text-white hover:bg-rose-600 transition shadow-[2px_3.5px_0_0_#0F172A]"
         >
           <Image src="/images/ic-x.svg" alt="삭제" width={16} height={16} />
           삭제하기

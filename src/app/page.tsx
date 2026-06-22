@@ -57,7 +57,8 @@ export default function Home() {
               />
               <p className="text-slate-400 text-sm font-medium text-center">
                 할 일이 없어요.
-                <br />할 일을 추가해보세요!
+                <br />
+                TODO를 새롭게 추가해주세요!
               </p>
             </div>
           ) : (
@@ -92,7 +93,8 @@ export default function Home() {
               />
               <p className="text-slate-400 text-sm font-medium text-center">
                 아직 다 한 일이 없어요.
-                <br />할 일을 완료해보세요!
+                <br />
+                해야 할 일을 체크해보세요!
               </p>
             </div>
           ) : (

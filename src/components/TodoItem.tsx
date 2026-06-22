@@ -34,7 +34,7 @@ export default function TodoItem({ item, onToggle }: TodoItemProps) {
   return (
     <div
       onClick={handleClick}
-      className={`flex items-center gap-4 w-full h-[50px] px-4 rounded-full border-2 border-slate-900 cursor-pointer
+      className={`flex items-center gap-4 w-full h-[50px] px-4 rounded-[27px] border-2 border-slate-900 cursor-pointer
         ${item.isCompleted ? "bg-violet-100 line-through text-slate-400" : "bg-white text-slate-900"}`}
     >
       {/* 체크박스 버튼 */}
