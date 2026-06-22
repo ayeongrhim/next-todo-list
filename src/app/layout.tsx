@@ -3,8 +3,11 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Do it!",
-  description: "할 일 목록 관리 서비스",
+  title: "Todo List",
+  description: "할 일 목록을 관리하는 To Do 서비스",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
