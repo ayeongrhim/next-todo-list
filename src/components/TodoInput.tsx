@@ -40,7 +40,7 @@ export default function TodoInput({ onAdd }: TodoInputProps) {
       {/* 데스크탑/태블릿 버튼 */}
       <button
         onClick={handleSubmit}
-        className="hidden sm:flex h-[56px] px-6 items-center gap-2 rounded-full border-2 border-slate-900 bg-violet-600 font-bold text-white hover:bg-violet-700 transition shadow-[2px_3.5px_0_0_#0F172A]"
+        className="hidden sm:flex h-[56px] px-6 items-center gap-2 rounded-full border-2 border-slate-900 bg-violet-600 font-bold text-white hover:bg-violet-700 transition shadow-[2px_3.5px_0_0_#0F172A] cursor-pointer"
       >
         <Image
           src="/images/ic-plus-white.svg"
@@ -53,7 +53,7 @@ export default function TodoInput({ onAdd }: TodoInputProps) {
       {/* 모바일 버튼 */}
       <button
         onClick={handleSubmit}
-        className="flex sm:hidden w-[56px] h-[56px] items-center justify-center rounded-full border-2 border-slate-900 bg-violet-600 font-bold text-white hover:bg-violet-700 transition shadow-[2px_3.5px_0_0_#0F172A]"
+        className="flex sm:hidden w-[56px] h-[56px] items-center justify-center rounded-full border-2 border-slate-900 bg-violet-600 font-bold text-white hover:bg-violet-700 transition shadow-[2px_3.5px_0_0_#0F172A] cursor-pointer"
       >
         <Image
           src="/images/ic-plus-white.svg"

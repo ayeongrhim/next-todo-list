@@ -40,7 +40,7 @@ export default function TodoItem({ item, onToggle }: TodoItemProps) {
       {/* 체크박스 버튼 */}
       <button
         onClick={handleToggle}
-        className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center"
+        className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center cursor-pointer"
       >
         <Image
           src={
