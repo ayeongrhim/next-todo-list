@@ -4,13 +4,22 @@
  * 반응형: 데스크탑/태블릿은 큰 로고, 모바일은 작은 로고
  */
 
-import Link from "next/link";
+"use client";
+
 import Image from "next/image";
 
 export default function Navbar() {
+  const handleLogoClick = () => {
+    window.location.href = "/";
+  };
+
   return (
     <nav className="w-full h-[60px] bg-white border-b border-slate-200 flex items-center px-6">
-      <Link href="/">
+      <button
+        type="button"
+        onClick={handleLogoClick}
+        className="cursor-pointer"
+      >
         {/* 데스크탑/태블릿 로고 */}
         <Image
           src="/images/logo.svg"
@@ -29,7 +38,7 @@ export default function Navbar() {
           priority
           className="block sm:hidden"
         />
-      </Link>
+      </button>
     </nav>
   );
 }
