@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/images/logo.svg" alt="do it ; 로고" width="250" />
+  <img src="./public/images/logo.svg" alt="로고" width="250" />
 </p>
 
 <p align="center"><strong>할 일 목록을 관리하는 To Do 서비스</strong></p>
