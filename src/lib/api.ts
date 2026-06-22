@@ -1,7 +1,7 @@
 import { TodoItem } from "@/types";
 
 const BASE_URL = "https://assignment-todolist-api.vercel.app/api";
-const TENANT_ID = "ayeongrhim"; // 본인 tenantId
+const TENANT_ID = "ayeongrhim";
 
 // 할 일 목록 조회
 export async function getTodos(): Promise<TodoItem[]> {
