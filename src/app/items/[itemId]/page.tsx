@@ -124,10 +124,19 @@ export default function ItemDetail() {
                 height={64}
               />
             )}
-            {/* 이미지 추가 버튼 */}
-            <div className="absolute bottom-4 right-4 w-16 h-16 rounded-full bg-slate-200 flex items-center justify-center">
+            {/* 이미지 추가/수정 버튼 */}
+            <div
+              className={`absolute bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center
+  ${
+    imageUrl
+      ? "bg-[rgba(15,23,42,0.5)] border-2 border-slate-900"
+      : "bg-slate-200"
+  }`}
+            >
               <Image
-                src="/images/ic-plus-gray.svg"
+                src={
+                  imageUrl ? "/images/ic-edit.svg" : "/images/ic-plus-gray.svg"
+                }
                 alt="이미지 추가"
                 width={24}
                 height={24}
