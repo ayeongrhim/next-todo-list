@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <nav className="w-full h-[60px] bg-white border-b border-slate-200 flex items-center">
       {/* 컨텐츠 영역을 page.tsx와 동일하게 max-w + padding 맞춤 */}
-      <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6">
+      <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 flex items-center h-full">
         <button
           type="button"
           onClick={handleLogoClick}
