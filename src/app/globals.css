@@ -49,3 +49,8 @@ textarea::-webkit-scrollbar-track {
 textarea::-webkit-scrollbar-button {
   display: none !important;
 }
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
+}
