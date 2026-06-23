@@ -31,3 +31,21 @@
 body {
   font-family: "NanumSquare", sans-serif;
 }
+
+/* 메모 스크롤바 커스텀 */
+textarea::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #fde68a !important; /* amber-200 */
+  border-radius: 3px !important;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+textarea::-webkit-scrollbar-button {
+  display: none !important;
+}

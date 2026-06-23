@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-10">
       {/* 할 일 입력 */}
-      <TodoInput onAdd={fetchTodosCallback} />
+      <TodoInput onAdd={fetchTodosCallback} isEmpty={todos.length === 0} />
 
       <div className="mt-10 flex flex-col lg:flex-row gap-6">
         {/* 진행 중 섹션 */}

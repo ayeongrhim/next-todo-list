@@ -6,7 +6,7 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { getTodoById, updateTodo, deleteTodo, uploadImage } from "@/lib/api";
 import { TodoItem } from "@/types";
@@ -21,6 +21,15 @@ export default function ItemDetail() {
   const [memo, setMemo] = useState("");
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [isCompleted, setIsCompleted] = useState(false);
+
+  const [inputWidth, setInputWidth] = useState(0);
+  const spanRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (spanRef.current) {
+      setInputWidth(spanRef.current.offsetWidth);
+    }
+  }, [name]);
 
   useEffect(() => {
     const fetchTodo = async () => {
@@ -92,11 +101,19 @@ export default function ItemDetail() {
           width={32}
           height={32}
         />
+        {/* 텍스트 너비 측정용 hidden span */}
+        <span
+          ref={spanRef}
+          className="absolute invisible font-bold text-lg whitespace-pre"
+        >
+          {name || " "}
+        </span>
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           onClick={(e) => e.stopPropagation()}
+          style={{ width: inputWidth ? `${inputWidth}px` : "auto" }}
           className={`bg-transparent outline-none font-bold text-lg text-center underline
     ${isCompleted ? "line-through text-slate-900" : "text-slate-900"}`}
         />
@@ -107,7 +124,12 @@ export default function ItemDetail() {
         <div className="lg:w-[384px] shrink-0">
           <label
             htmlFor="image-upload"
-            className="relative flex items-center justify-center w-full aspect-square rounded-3xl border-2 border-dashed border-slate-300 bg-slate-100 cursor-pointer overflow-hidden"
+            className={`relative flex items-center justify-center w-full h-[311px] rounded-3xl cursor-pointer overflow-hidden
+    ${
+      imageUrl
+        ? "border-none"
+        : "border-2 border-dashed border-slate-300 bg-slate-50"
+    }`}
           >
             {imageUrl ? (
               <Image
@@ -126,7 +148,7 @@ export default function ItemDetail() {
             )}
             {/* 이미지 추가/수정 버튼 */}
             <div
-              className={`absolute bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center
+              className={`absolute bottom-4 right-4 w-16 h-16 rounded-full flex items-center justify-center transition-transform hover:scale-105
   ${
     imageUrl
       ? "bg-[rgba(15,23,42,0.5)] border-2 border-slate-900"
@@ -154,7 +176,7 @@ export default function ItemDetail() {
 
         {/* 메모 */}
         <div
-          className="flex-1 rounded-3xl p-6 relative"
+          className="flex-1 rounded-3xl p-6 relative h-[311px] min-h-[311px] flex flex-col"
           style={{
             backgroundImage: "url('/images/memo-bg.svg')",
             backgroundSize: "cover",
@@ -163,15 +185,13 @@ export default function ItemDetail() {
           {/* Memo 타이틀 상단 고정 */}
           <p className="text-center font-bold text-amber-800 mb-4">Memo</p>
 
-          {/* 내용 영역 - 가운데 정렬 */}
-          <div className="flex items-center justify-center h-[calc(100%-40px)] scrollbar-thin scrollbar-thumb-amber-200 scrollbar-track-transparent scrollbar-gutter-stable">
-            <textarea
-              value={memo}
-              onChange={(e) => setMemo(e.target.value)}
-              placeholder="메모를 입력해주세요"
-              className="h-full w-full bg-transparent outline-none resize-none text-slate-800 placeholder:text-slate-400 text-center"
-            />
-          </div>
+          {/* 내용 영역 */}
+          <textarea
+            value={memo}
+            onChange={(e) => setMemo(e.target.value)}
+            placeholder="메모를 입력해주세요"
+            className="flex-1 w-full bg-transparent outline-none resize-none text-slate-800 placeholder:text-slate-400 text-center pr-1.5"
+          />
         </div>
       </div>
 
@@ -180,8 +200,8 @@ export default function ItemDetail() {
         {/* 수정 완료 버튼 */}
         <button
           onClick={handleUpdate}
-          className={`cursor-pointer flex items-center gap-2 h-[56px] px-[42px] rounded-3xl border-2 border-slate-900 font-bold text-slate-900 hover:opacity-90 transition shadow-[2px_3.5px_0_0_#0F172A]
-    ${isCompleted ? "bg-lime-300" : "bg-slate-200"}`}
+          className={`cursor-pointer flex items-center gap-2 h-[56px] px-[42px] rounded-3xl border-2 border-slate-900 font-bold text-slate-900 transition shadow-[3.5px_4px_0_0_#0F172A]
+    ${isCompleted ? "bg-lime-300 hover:bg-lime-400" : "bg-slate-200 hover:bg-slate-300"}`}
         >
           <Image src="/images/ic-check.svg" alt="완료" width={16} height={16} />
           수정 완료
@@ -189,7 +209,7 @@ export default function ItemDetail() {
         {/* 삭제하기 버튼 */}
         <button
           onClick={handleDelete}
-          className="cursor-pointer flex items-center gap-2 h-[56px] px-[42px] rounded-3xl border-2 border-slate-900 bg-rose-500 font-bold text-white hover:bg-rose-600 transition shadow-[2px_3.5px_0_0_#0F172A]"
+          className="cursor-pointer flex items-center gap-2 h-[56px] px-[42px] rounded-3xl border-2 border-slate-900 bg-rose-500 font-bold text-white hover:bg-rose-600 transition shadow-[3.5px_4px_0_0_#0F172A]"
         >
           <Image src="/images/ic-x.svg" alt="삭제" width={16} height={16} />
           삭제하기

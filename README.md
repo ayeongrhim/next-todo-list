@@ -1,8 +1,6 @@
 <p align="center">
-  <img src="./public/images/logo.svg" alt="do it ; 로고" width="200" />
+  <img src="./public/images/logo.svg" alt="로고" width="250" />
 </p>
-
-<h1 align="center">do it ;</h1>
 
 <p align="center"><strong>할 일 목록을 관리하는 To Do 서비스</strong></p>
 
@@ -15,14 +13,15 @@
 
 ---
 
-## 🚀 1. 기술 스택
+## 🚀 기술 스택
 
 - **Framework**: Next.js 15
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Deployment**: Vercel
+  </br>
 
-## ⚙️ 2. 시작하기
+## ⚙️ 시작하기
 
 ### 1) 패키지 설치
 
@@ -38,7 +37,9 @@ npm run dev
 
 브라우저에서 [http://localhost:3000](http://localhost:3000) 으로 접속
 
-## ✨ 3. 주요 기능
+</br>
+
+## ✨ 주요 기능
 
 ### 1) 할 일 목록 페이지
 
@@ -48,7 +49,7 @@ npm run dev
 
 ### 2) 할 일 상세 페이지
 
-- `할 일 목록 페이지`에서 단일 항목 클릭 시 `할 일 상세 페이지`로 이동
+- 목록에서 단일 항목 클릭 시 해당 항목의 상세 페이지로 이동
 - **할 일 수정**:
   - 할 일의 이름 및 상태 수정
   - 메모 작성 및 이미지 첨부 가능 (영어 파일명, 5MB 이하)
@@ -58,7 +59,8 @@ npm run dev
 ### 3) 디바이스 최적화
 
 - 반응형 웹 디자인 (모바일/ 태블릿/ 데스크탑)
+  </br>
 
-## 🔗 4. 배포
+## 🔗 배포
 
 [do it ;](#)
