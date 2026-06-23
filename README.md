@@ -44,11 +44,21 @@ npm run dev
 
 ### 1) 할 일 목록 페이지
 
+<div style="display: flex; gap: 16px;">
+  <img src="./public/screenshots/list-desktop.png" height="400" />
+  <img src="./public/screenshots/mobile-desktop.png" height="400" />
+</div>
+
 - 상단 `로고` 클릭 시 메인 페이지(`/`)로 이동 (새로고침)
 - 상태별(진행 중 / 완료) 목록 조회 (`체크박스` 아이콘 클릭하여 상태 토글)
 - **할 일 추가**: 상단 입력 창에 텍스트 입력 후 `추가하기` 버튼 클릭 혹은 `Enter` 키 타이핑하여 등록
 
 ### 2) 할 일 상세 페이지
+
+<div style="display: flex; gap: 16px;">
+  <img src="./public/screenshots/detail-desktop.png" height="400" />
+  <img src="./public/screenshots/detail-desktop.png" height="400" />
+</div>
 
 - 목록에서 단일 항목 클릭 시 해당 항목의 상세 페이지로 이동
 - **할 일 수정**:
