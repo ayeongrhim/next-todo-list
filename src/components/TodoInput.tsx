@@ -57,7 +57,7 @@ export default function TodoInput({ onAdd, isEmpty }: TodoInputProps) {
       {/* 모바일 버튼 */}
       <button
         onClick={handleSubmit}
-        className={`flex sm:hidden w-[56px] h-[56px] items-center justify-center rounded-3xl border-2 border-slate-900 font-bold transition shadow-[3.5px_4px_0_0_#0F172A] cursor-pointer
+        className={`flex sm:hidden w-[56px] h-[56px] shrink-0 items-center justify-center rounded-3xl border-2 border-slate-900 font-bold transition shadow-[3.5px_4px_0_0_#0F172A] cursor-pointer
     ${isEmpty ? "bg-violet-600 hover:bg-violet-700 text-white" : "bg-slate-200 hover:bg-slate-300 text-slate-900"}`}
       >
         <Image
