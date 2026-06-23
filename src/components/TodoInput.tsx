@@ -36,7 +36,7 @@ export default function TodoInput({ onAdd, isEmpty }: TodoInputProps) {
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="할 일을 입력해주세요"
-        className="flex-1 h-[56px] rounded-3xl border-2 border-slate-900 bg-slate-100 px-6 text-slate-900 placeholder:text-slate-500 outline-none shadow-[3.5px_4px_0_0_#0F172A]"
+        className="flex-1 min-w-0 h-[56px] rounded-3xl border-2 border-slate-900 bg-slate-100 px-6 text-slate-900 placeholder:text-slate-500 outline-none shadow-[3.5px_4px_0_0_#0F172A]"
       />
       {/* 데스크탑/태블릿 버튼 */}
       <button
