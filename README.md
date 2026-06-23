@@ -19,7 +19,8 @@
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Deployment**: Vercel
-  </br>
+
+</br>
 
 ## ⚙️ 시작하기
 
@@ -59,7 +60,8 @@ npm run dev
 ### 3) 디바이스 최적화
 
 - 반응형 웹 디자인 (모바일/ 태블릿/ 데스크탑)
-  </br>
+
+</br>
 
 ## 🔗 배포
 
