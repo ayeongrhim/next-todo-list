@@ -45,8 +45,8 @@ npm run dev
 ### 1) 할 일 목록 페이지
 
 <div style="display: flex; gap: 16px;">
-  <img src="./public/screenshots/list-desktop.png" height="400" />
-  <img src="./public/screenshots/mobile-desktop.png" height="400" />
+  <img src="./public/screenshots/list-desktop.jpg" height="400" />
+  <img src="./public/screenshots/list-mobile.jpg" height="400" />
 </div>
 
 - 상단 `로고` 클릭 시 메인 페이지(`/`)로 이동 (새로고침)
@@ -56,8 +56,8 @@ npm run dev
 ### 2) 할 일 상세 페이지
 
 <div style="display: flex; gap: 16px;">
-  <img src="./public/screenshots/detail-desktop.png" height="400" />
-  <img src="./public/screenshots/detail-desktop.png" height="400" />
+  <img src="./public/screenshots/detail-desktop.jpg" height="400" />
+  <img src="./public/screenshots/detail-mobile.jpg" height="400" />
 </div>
 
 - 목록에서 단일 항목 클릭 시 해당 항목의 상세 페이지로 이동
