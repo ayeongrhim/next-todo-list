@@ -75,4 +75,4 @@ npm run dev
 
 ## 🔗 배포
 
-[do it ;](#)
+[do it ;](https://next-todo-list-virid.vercel.app/)
