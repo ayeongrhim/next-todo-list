@@ -86,11 +86,11 @@ export default function ItemDetail() {
   if (!todo) return <div className="p-10 text-center">로딩 중...</div>;
 
   return (
-    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-10">
+    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-4 sm:py-6">
       {/* 할 일 이름 + 상태 토글 */}
       <div
         onClick={() => setIsCompleted(!isCompleted)}
-        className={`flex items-center justify-center gap-4 w-full h-[64px] px-6 rounded-3xl border-2 border-slate-900 cursor-pointer mb-6
+        className={`flex items-center justify-center gap-4 w-full h-[64px] px-6 rounded-3xl border-2 border-slate-900 cursor-pointer mb-4 sm:mb-6
     ${isCompleted ? "bg-violet-100" : "bg-white"}`}
       >
         <Image

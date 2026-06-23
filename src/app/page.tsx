@@ -33,11 +33,11 @@ export default function Home() {
   const doneList = todos.filter((item) => item.isCompleted);
 
   return (
-    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-10">
+    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-4 sm:py-6">
       {/* 할 일 입력 */}
       <TodoInput onAdd={fetchTodosCallback} isEmpty={todos.length === 0} />
 
-      <div className="mt-10 flex flex-col lg:flex-row gap-6">
+      <div className="mt-6 sm:mt-10 flex flex-col lg:flex-row gap-6">
         {/* 진행 중 섹션 */}
         <section className="flex-1">
           <Image
